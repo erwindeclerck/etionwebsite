@@ -9,7 +9,6 @@
 /web/libraries/
 
 /console/
-/scripts/
 
 # Ignore sensitive information
 /web/sites/*/settings.php
