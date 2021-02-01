@@ -31,6 +31,6 @@
 /.lando.yml
 /.travis.yml
 /LICENSE
-/load.environment.php
+
 /phpunit.xml.dist
 /README.md
