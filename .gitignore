@@ -34,3 +34,8 @@
 
 /phpunit.xml.dist
 /README.md
+
+
+#NETBEANS
+/web/nbproject/
+
