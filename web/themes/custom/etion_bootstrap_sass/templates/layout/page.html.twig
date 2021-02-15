@@ -74,17 +74,17 @@
         {% if page.secondary_menu or page.top_header or page.top_header_form %}
           <nav{{ navbar_top_attributes }}>
           {% if container_navbar %}
-          <div class="container">
-          {% endif %}
-              {{ page.secondary_menu }}
-              {{ page.top_header }}
-              {% if page.top_header_form %}
-                <div class="form-inline navbar-form ml-auto">
-                  {{ page.top_header_form }}
-                </div>
-              {% endif %}
-          {% if container_navbar %}
-          </div>
+            <div class="container">
+            {% endif %}
+                {{ page.secondary_menu }}
+                {{ page.top_header }}
+                {% if page.top_header_form %}
+                  <div class="form-inline navbar-form ml-auto">
+                    {{ page.top_header_form }}
+                  </div>
+                {% endif %}
+            {% if container_navbar %}
+            </div>
           {% endif %}
           </nav>
         {% endif %}
@@ -113,6 +113,7 @@
         </nav>
       {% endblock %}
     </header>
+
     {% if page.highlighted %}
       <div class="highlighted">
         <aside class="{{ container }} section clearfix" role="complementary">
@@ -129,6 +130,21 @@
         </div>
       {% endblock %}
     {% endif %}
+
+    {# Background Image #}
+    {% block background_image -%}
+      {%- if page.background_image -%}
+        {{- page.background_image -}}
+      {%- endif -%}
+    {%- endblock %}
+
+    {# Home Top Image #}
+    {% block home_top_image -%}
+      {%- if page.home_top_image -%}
+        {{- page.home_top_image -}}
+      {%- endif -%}
+    {%- endblock %}
+
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
         <div id="main" class="{{ container }}">

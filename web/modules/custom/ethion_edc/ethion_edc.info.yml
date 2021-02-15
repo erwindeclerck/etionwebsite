@@ -1,0 +1,5 @@
+name: 'ethion_edc'
+type: module
+description: 'Module met specifieke aanpassingen'
+core: 8.x
+package: 'Ethion'

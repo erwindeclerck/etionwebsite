@@ -1,0 +1,188 @@
+
+.btn {
+  border: 1px solid black;
+  border-top-right-radius: 20px 50%;
+  border-bottom-right-radius: 20px 50%;
+  border-top-left-radius: 20px 50%;
+  border-bottom-left-radius: 20px 50%;
+
+}
+
+/*
+.btn-primary{
+  background-color: $yellow !important;
+}
+*/
+.hannabutton {
+  //  background-color: $yellow !important;
+  background: #FFFFFF05 0% 0% no-repeat padding-box;
+  border: 1px solid #FFF7F7;
+  border-radius: 22px;
+  opacity: 1;
+}
+
+.site-footer {
+  background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/patt01.svg') center / cover no-repeat local border-box padding-box white !important;
+}
+
+.site-footer__bottom {
+  border-top: none;
+  border-color: transparent;
+  p {
+    color: #fff;
+  }
+}
+
+
+
+// START TRIPTIEK HOMEPAGINA
+
+.field--name-field-categorie {
+  margin-bottom: 0;
+  .field--name-field-icoon {
+    float: none !important;
+  }
+  .field--name-field-icoon IMG {
+    height: 55px;
+    width: 55px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+.field--name-field-domeinbenaming {
+  height: 2em;
+  margin-bottom: 30px;
+}
+
+
+.field--name-field-domeinbeschrijving {
+  padding-left: 22px;
+  border-left-width: 2px;
+  border-left-style: solid;
+  margin-left: 15px;
+  margin-bottom: 2em !important;
+  P {
+  }
+}
+
+.radix-layouts-column1 .field--name-field-domeinbeschrijving {
+  border-left-color: #EC7973;
+}
+
+.radix-layouts-column2 .field--name-field-domeinbeschrijving {
+  border-left-color: #FCA12D;
+}
+
+.radix-layouts-column3 .field--name-field-domeinbeschrijving {
+  border-left-color: #6AB489;
+}
+
+
+
+
+.field--name-field-domeinlinks,.field--name-field-link   {
+  .field__item {
+    margin-bottom: 16px;
+    a {
+      font-size: 1rem;
+      font-family: Bilo;
+      &::after {
+        content: " ";
+        width: 30px;
+        height: 15px;
+        position: static;
+        display: inline-block;
+        //background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/groenpijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+        margin-bottom: -2px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.field--name-field-domeinlinks  {
+  .field__item {
+    a {
+      color: black;
+    }
+  }
+}
+.field--name-field-link  {
+  .field__item {
+    a {
+      color: white;
+    }
+  }
+}
+
+//.radix-layouts-column1 .field--name-field-domeinlinks .field__item a:after {
+//  background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/roodpijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+//  margin-left:0px;
+//  &:hover{
+//    margin-left:30px;
+//  }
+//}
+.radix-layouts-column1 .field--name-field-domeinlinks .field__item a {
+  &::after{
+    background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/roodpijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+    transition: margin-left 200ms;
+  }
+  &:hover::after{
+    background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/roodpijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+    margin-left:10px;
+    transition: margin-left 200ms;
+  }
+
+}
+
+.radix-layouts-column2 .field--name-field-domeinlinks .field__item a {
+  &::after{
+    background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/oranjepijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+    transition: margin-left 200ms;
+  }
+  &:hover::after{
+    background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/oranjepijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+    margin-left:10px;
+    transition: margin-left 200ms;
+  }
+
+}
+
+.radix-layouts-column3 .field--name-field-domeinlinks .field__item a {
+  &::after{
+    background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/groenpijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+    transition: margin-left 200ms;
+  }
+  &:hover::after{
+    background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/groenpijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+    margin-left:10px;
+    transition: margin-left 200ms;
+  }
+
+}
+
+.site-footer .field--name-field-link .field__item a {
+  &::after{
+    background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/wittepijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+    transition: margin-left 200ms;
+  }
+  &:hover::after{
+    background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/wittepijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+    margin-left:10px;
+    transition: margin-left 200ms;
+  }
+
+}
+
+//.radix-layouts-column2 .field--name-field-domeinlinks .field__item a::after {
+//  background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/oranjepijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+//}
+//
+//.radix-layouts-column3 .field--name-field-domeinlinks .field__item a::after {
+//  background: url('/themes/custom/etion_bootstrap_sass/images/hannaxd/groenpijltje.svg') center / 25px no-repeat local content-box padding-box rgba(255, 255, 255, 0);
+//}
+
+
+// EINDE TRIPTIEK HOMEPAGINA

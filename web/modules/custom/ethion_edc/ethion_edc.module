@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains ethion_edc.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ethion_edc_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ethion_edc module.
+    case 'help.page.ethion_edc':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module met specifieke aanpassingen') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ethion_edc_theme() {
+  return [
+    'ethion_edc' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+
+/**
+ *
+ */
+
+function ethion_edc_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id != 'my_form') {
+    $form['actions']['submit']['#attributes']['class'][] = 'hannabutton';
+  }
+}

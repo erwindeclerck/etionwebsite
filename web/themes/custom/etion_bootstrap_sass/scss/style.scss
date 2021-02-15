@@ -13,7 +13,6 @@ body {
     background: $white;
 }
 
-
 /* COLORS 
 --------------------------------------------------*/
 
@@ -23,10 +22,6 @@ a {
 
 .bg-inverse {
     background: $primary-shade !important;
-}
-
-.site-footer {
-    background: $accent-shade !important;
 }
 
 .menu--main li a {
@@ -57,4 +52,18 @@ a {
 
 .slick>div {
     margin: 0 15px;
+}
+
+
+/*EDC START*/
+
+.bg-primary{
+    background-color: black !important;
+}
+.bg-secondary{
+    background-color: black !important;
+}
+
+.site-footer{
+    background-color: black !important;
 }

@@ -1,0 +1,13 @@
+{
+    "name": "ethion_edc",
+    "type": "drupal-module",
+    "description": "Module met specifieke aanpassingen",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/ethion_edc",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/ethion_edc",
+        "source": "http://cgit.drupalcode.org/ethion_edc",
+    },
+}

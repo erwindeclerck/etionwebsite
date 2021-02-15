@@ -1,0 +1,110 @@
+/**
+* Inside home-header.scss
+*/
+
+.node--type-homepagina {
+
+  .radix-layouts-header {
+    position: relative;
+    .panel-panel-inner .text-formatted {
+      position: absolute;
+      left: 40%;
+      right: 20%;
+      text-align: left;
+      H1 {
+        color: white;
+        margin-bottom: 30px;
+        margin-top: 45px;
+      }
+      P {
+        color: white;
+        margin-left: 10%;
+      }
+      A {
+        border: 1px solid #FFFFFF;
+        padding: 11px;
+        border-radius: 30px;
+        color: white;
+        margin-top: 9px;
+        display: inline-block;
+      }
+    }
+  }
+
+}
+/*
+@use "sass:list";
+$lijst: (a:40px, b:50px, c:60px);
+@debug map-get($grid-breakpoints,lg);
+@debug map-get($grid-breakpoints,lg);
+*/
+.panel-display.tweekeerdrie{
+  margin-top:-16px;
+  margin-bottom: 64px;
+  .field--name-field-hero-home {
+    position: relative;
+    width:100%;
+    @media(min-width: map-get($grid-breakpoints,sm) ) {
+      width: 540px;
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+    @media(min-width: map-get($grid-breakpoints,md) ) {
+      width: 768px;
+      margin-left: -40px;
+      margin-right: -40px;
+    }
+    @media(min-width: map-get($grid-breakpoints,lg) ) {
+      width: 1024px;
+      margin-left: -50px;
+      margin-right: -50px;
+    }
+    @media(min-width: map-get($grid-breakpoints,xl) ) {
+      width: 1366px;
+      margin-left: -130px;
+      margin-right: -130px;
+    }
+  }
+  .field--name-body {
+    position: absolute;
+    top:0px;
+    left: 40%;
+    right: 20%;
+    text-align: left;
+    H1 {
+      color: white;
+      margin-bottom: 30px;
+      margin-top: 45px;
+    }
+    P {
+      color: white;
+      margin-left: 10%;
+    }
+    A.pill {
+      border: 1px solid #FFFFFF;
+      padding: 11px 15px;
+      border-radius: 30px;
+      color: white;
+      margin-top: 9px;
+      display: inline-block;
+    }
+  }
+}
+
+/*
+.paragraph--type--intro.paragraph--view-mode--test-paragraph-{
+  position: relative;
+  .row#achtergrond{
+    .field--name-field-intro-afbeelding{
+      img{
+
+      }
+
+    }
+  }
+  .row#voorgrond{
+
+  }
+
+}
+*/

@@ -1,0 +1,5 @@
+radix_layouts_edc:
+  version: VERSION
+  css:
+    theme:
+      radix_layouts_edc.css: {}

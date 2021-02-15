@@ -1,0 +1,44 @@
+radix_tweekeerdrie:
+  label: Twee keer drie
+  category: Radix
+  path: plugins/layouts/radix_tweekeerdrie
+  template: radix-tweekeerdrie
+  icon: radix-tweekeerdrie.png
+  library: radix_layouts_edc/radix_layouts_edc
+  regions:
+    header:
+      label: Header
+    column1:
+      label: "Row 1: First Column"
+    column2:
+      label: "Row 1: Second Column"
+    column3:
+      label: "Row 1: Third Column"
+    secondarycolumn1:
+      label: "Row 2: First Column"
+    secondarycolumn2:
+      label: "Row 2: Second Column"
+    secondarycolumn3:
+      label: "Row 2: Third Column"
+    footer:
+      label: Footer
+radix_tweekeertwee:
+  label: Twee keer twee
+  category: Radix
+  path: plugins/layouts/radix_tweekeertwee
+  template: radix-tweekeertwee
+  icon: radix-tweekeertwee.png
+  library: radix_layouts_edc/radix_layouts_edc
+  regions:
+    header:
+      label: Header
+    column1:
+      label: "Row 1: First Column"
+    column2:
+      label: "Row 1: Second Column"
+    secondarycolumn1:
+      label: "Row 2: First Column"
+    secondarycolumn2:
+      label: "Row 2: Second Column"
+    footer:
+      label: Footer
