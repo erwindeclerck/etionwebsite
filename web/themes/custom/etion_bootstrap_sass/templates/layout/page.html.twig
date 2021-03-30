@@ -67,6 +67,13 @@
  * @see html.html.twig
  */
 #}
+
+{#
+/**
+* EDC toegevoegd onderaan een rij voor het footer triplet footer__etion met region left, center, right
+*/
+#}
+
 <div id="page-wrapper">
   <div id="page">
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
@@ -197,6 +204,13 @@
           {% if page.footer_fifth %}
             <div class="site-footer__bottom">
               {{ page.footer_fifth }}
+            </div>
+          {% endif %}
+          {% if page.footer_left or page.footer_center or page.footer_right %}
+            <div class="site-footer__etion clearfix">
+              {{ page.footer_left }}
+              {{ page.footer_center }}
+              {{ page.footer_right }}
             </div>
           {% endif %}
         </div>

@@ -30,3 +30,22 @@ function etion_bootstrap_sass_form_system_theme_settings_alter(&$form, FormState
     'bg-transparent' => t('Transparent'),
   );
 }
+
+
+// function etion_bootstrap_sass_preprocess_node(&$variables) {
+//   $variables['show_foo_field'] = FALSE;
+//   $variables['show_foo_field'] = TRUE;
+
+//     // Get the node's content type
+//   $type = $variables['node']->getType();
+
+//   // Get its view mode
+//   $mode = $variables['view_mode'];
+
+
+// }
+
+// function etion_bootstrap_sass_preprocess_field(&$variables) {
+//     $node = $variables['element']['#object'];
+//     $variables['node'] = $variables['element']['#object'];
+// }

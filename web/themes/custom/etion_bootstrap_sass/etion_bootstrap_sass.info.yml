@@ -34,6 +34,10 @@ regions:
   footer_third: 'Footer third'
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
+#EDC toegevoegd drie regions voor tripet footer
+  footer_left: 'Footer left'
+  footer_center: 'Footer center'
+  footer_right: 'Footer right'
 
 # Information added by Drupal.org packaging script on 2020-10-11
 version: '5.0.2'

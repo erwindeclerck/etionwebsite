@@ -1,0 +1,37 @@
+--- page_specific_class.module	2020-06-02 12:12:53.000000000 +0200
++++ "page_specific_class.module"	2021-03-30 23:45:20.804505200 +0200
+@@ -32,10 +32,17 @@
+         $classes_array = explode(' ', $class);
+         $front_page = \Drupal::service('path.matcher')->isFrontPage();
+         $enteredPath = \Drupal::service('path_alias.manager')->getPathByAlias($url);
++        $current_path = \Drupal::service('path.current')->getPath();
++        $current_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
++
++        // $output['enteredPath']=$enteredPath;
++        // $output['current_path']=$current_path;
++        // $output['current_alias']=$current_alias;
++        // dpm($output,"alles");
+ 
+         // If current path and entered path by user in page class setting match,
+         // then only add respective class.
+-        if ($current_path == $enteredPath) {
++        if (fnmatch($enteredPath,$current_alias) ) {
+           foreach ($classes_array as $class) {
+             $variables['attributes']['class'][] = Html::cleanCssIdentifier($class, []);
+           }
+@@ -52,7 +59,6 @@
+     }
+   }
+ }
+-
+ /**
+  * Implements hook_help().
+  */
+@@ -63,6 +69,7 @@
+       $output = '';
+       $output .= '<h3>' . t('About') . '</h3>';
+       $output .= '<p>' . t("Page Specific Class allows users to add classes to body of any page through the configuration interface. Hooray for more powerful page theming!") . '</p>';
++      $output .= '<p>' . t("Gemodifieerde module: gebruik * voor willekeurige match(meerdere) ? voor 1 karakter, [xyz] voor een letter x,y of z op één plaats <a href=https://cowburn.info/2010/04/30/glob-patterns/>link</a> voor handig overzicht!") . '</p>';
+ 
+       $output .= '<h3>' . t('Usage') . '</h3>';
+       $output .= '<dl>';

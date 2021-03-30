@@ -19,15 +19,31 @@
         "php": ">=7.0.8",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
+        "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/bootstrap_sass": "^5.0",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.8.0",
         "drupal/core-composer-scaffold": "^8.8.0",
         "drupal/devel": "^4.1",
+        "drupal/ds": "^3.12",
+        "drupal/field_formatter_class": "^1.5",
+        "drupal/field_group": "^3.1",
         "drupal/fieldblock": "^2.0@alpha",
+        "drupal/filefield_sources": "^1.0@alpha",
         "drupal/menu_link_attributes": "^1.1",
+        "drupal/page_specific_class": "^2.0",
         "drupal/paragraphs": "^1.12",
+        "drupal/pathauto": "^1.8",
+        "drupal/pdf": "^1.1",
+        "drupal/realistic_dummy_content": "^3.1",
+        "drupal/social_media_links": "^2.7",
         "drupal/taxonomy_image": "^1.0@alpha",
+        "drupal/textfield_counter": "^2.0",
+        "drupal/token_custom": "^1.0@alpha",
+        "drupal/token_custom_plus": "^1.0",
+        "drupal/token_filter": "^1.2",
+        "drupal/video": "^1.4",
+        "drupal/viewfield": "^3.0@beta",
         "drupal/webform": "^6.0",
         "drush/drush": "^9.7.1 | ^10.0.0",
         "vlucas/phpdotenv": "^4.0",
@@ -82,6 +98,12 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "enable-patching": true,
+        "patches": {
+        "drupal/page_specific_class": {
+            "aanpassing edc": "psc.patch"
         }
+     }
     }
 }

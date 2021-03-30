@@ -28,3 +28,18 @@
     padding: ($spacer / 2) 0;
     margin-top: 0;
 }
+
+/* EDC toegevoegd voor triplet footer */
+.site-footer__etion .content {
+    padding: ($spacer / 2) 0;
+    margin-top: 0;
+    display: flex; 
+    .layout__region{
+     p{
+        color:white !important;
+        }
+     a{
+        color:white !important;
+        }
+    }
+}

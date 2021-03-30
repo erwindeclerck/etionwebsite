@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Render\BubbleableMetadata;
 
 /**
  * Implements hook_help().
@@ -43,4 +44,90 @@ function ethion_edc_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id != 'my_form') {
     $form['actions']['submit']['#attributes']['class'][] = 'hannabutton';
   }
+}
+
+
+/**
+ * Implements hook_token_info()
+ */
+
+function ethion_edc_token_info()
+{
+
+  $info['tokens']['site']['my_edc_token'] = array(
+    'name' => t('Custom token replacement from edc'),
+    'description' => t('Just an edc text'),
+  );
+
+  return $info;
+}
+
+
+/**
+ * Implements hook_tokens()
+ */
+
+function ethion_edc_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata)
+{
+  $replacements = array();
+
+  if($type=="edc"){//tokens die beginnen met [edc:... worden hier nagekeken; andere tokens verliezen hier geen tijd.
+
+    foreach ($tokens as $name => $original) {
+
+      list($token, $param,$column) = explode(':', $name);
+      switch ($token) {
+        case 'testdata'://testtoken voor proof of concept: custom tokens
+          //restfunctie om data op te halen uit een restserver 
+          //-> wordt later de civicrm-api: https://dmaster.demo.civicrm.org/civicrm/api3#explorer
+          $ch = curl_init();
+          curl_setopt($ch, CURLOPT_URL, 'https://jsonplaceholder.typicode.com/posts/54');
+          curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+          curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Cookie: __cfduid=d71a3a69951f6afc66d638e6352a254ec1617048306',
+          ]);
+          $response = curl_exec($ch);
+          if (!$response) {
+            die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
+          }
+          // echo 'HTTP Status Code: ' . curl_getinfo($ch, CURLINFO_HTTP_CODE) . PHP_EOL;
+          // echo 'Response Body: ' . $response . PHP_EOL;
+          curl_close($ch);
+
+          $restdata = json_decode($response);//restdata bevat nu een object met rest-data
+
+          $node = $data['node'];//get node object
+          $type = $data['node']->getType();//get node type
+
+          if($type=='page'){ //in deze testcontext wordt nagekeken waar het token zich bevindt: vervalt later bij de echte toepassing... hier gaat het om een test in een 'basic page'
+            if($column=="title"){
+              $replacements[$original] = $restdata->title ;//$node->field_crm_id->view();
+            }
+            elseif($column=="body"){
+              $replacements[$original] = $restdata->body;
+            }
+            else{
+              $replacements[$original] = 'geen correct veld meegegeven in:' .$node->get('title')->getString();
+            }
+          }
+
+          if($type=='actie'){ //in deze testcontext wordt nagekeken waar het token zich bevindt: vervalt later bij de echte toepassing... hier gaat het om een test in een 'actie' waar nu ook een crm-id-veld bestaat om aan te duiden welke 
+            if($column=="title"){
+              $replacements[$original] = $restdata->title ." - ". $node->field_crm_id->get(0)->value ;//$node->field_crm_id->view();
+            }
+            elseif($column=="body"){
+              $replacements[$original] = $restdata->body;
+            }
+            else{
+              $replacements[$original] = 'geen correct veld meegegeven in:' .$node->get('title')->getString();
+            }
+          }
+          break;
+      }
+    }
+  }
+
+
+  return $replacements;
 }
